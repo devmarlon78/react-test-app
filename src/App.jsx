@@ -1,11 +1,15 @@
 import './App.css';
 
-function App() {
+const Calculator = (props) => {
+  return "This is a Component: " + props.sum ;
+}
 
+function App() {
   return (
     <>
       <div>
-        Hello World
+        {/* { Calculator() } */}
+        <Calculator sum={4} />
       </div>
     </>
   );
