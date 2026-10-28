@@ -8,6 +8,18 @@ const Rating = ({ heading = 'Rate your Experience?', feedbackMessage, color='gol
 	const [hover, setHover] = useState(0);
 
 	const [submitted, setSubmitted] = useState(false);
+
+	const handleSubmit = () => {
+		if(rating > 0) {
+			setSubmitted(true);
+		}
+	}
+
+	const closeHandler = () => {
+		setSubmitted(false);
+		setRating(0);
+		setHover(0);
+	}
 	
   	return (
 		<div className="rating-container" >
@@ -46,7 +58,23 @@ const Rating = ({ heading = 'Rate your Experience?', feedbackMessage, color='gol
 					</p>
 				</div>
 			}
-			<button className="submit-btn" >Submit</button>
+			<button 
+				className="submit-btn"
+				onClick={handleSubmit}
+				disabled={rating === 0}
+			>
+				Submit
+			</button>
+
+			{
+				submitted && <div className="modal-overlay">
+					<div className="modal">
+						<h2>Thank You!!!</h2>
+						<p>You rated us {rating} { rating === 1 ? 'star' : 'stars' }</p>
+						<button className="close-btn" onClick={closeHandler} >Close</button>
+					</div>
+				</div>
+			}
 		</div>
  	)
 }
