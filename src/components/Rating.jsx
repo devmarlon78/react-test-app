@@ -6,6 +6,8 @@ const Rating = ({ heading = 'Rate your Experience?', feedbackMessage, color='gol
 
 	const [rating, setRating] = useState(0);
 	const [hover, setHover] = useState(0);
+
+	const [submitted, setSubmitted] = useState(false);
 	
   	return (
 		<div className="rating-container" >
@@ -44,6 +46,7 @@ const Rating = ({ heading = 'Rate your Experience?', feedbackMessage, color='gol
 					</p>
 				</div>
 			}
+			<button className="submit-btn" >Submit</button>
 		</div>
  	)
 }
