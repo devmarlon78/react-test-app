@@ -1,12 +1,11 @@
 import './App.css';
-
-const Rating = () => {
-  return <div> Rate your Experience.</div>
-}
+import Rating from './components/Rating';
 
 function App() {
+  const name = "Dev";
   return (
     <>
+      <h1>Hello { name }</h1>
       <Rating />
     </>
   );
