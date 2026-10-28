@@ -1,5 +1,5 @@
 import './App.css';
-import Counter from './components/Counter';
+// import Counter from './components/Counter';
 import Rating from './components/Rating';
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <h1>Hello { name }</h1>
-      <Rating />
+      <Rating heading="How do you feel about React?" feedbackMessage={['Terrible', 'Poor', 'Fair', 'Good', 'Excellent']}/>
       {/* <Counter /> */}
     </>
   );
