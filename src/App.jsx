@@ -1,12 +1,14 @@
 import './App.css';
+import Counter from './components/Counter';
 import Rating from './components/Rating';
 
-function App() {
+const App = () => {
   const name = "Dev";
   return (
     <>
       <h1>Hello { name }</h1>
       <Rating />
+      {/* <Counter /> */}
     </>
   );
 }

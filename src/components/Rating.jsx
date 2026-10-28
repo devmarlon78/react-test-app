@@ -1,13 +1,10 @@
+import { useState } from "react";
+
 const Rating = () => {
 	const stars = Array.from({length: 5}, (_, i) => i + 1);
-	
-	const clicked = (index) => {
-		console.log('clicked: ' + index);
-	}
 
-	const hovered = (direction, index) => {
-		console.log('Hovered! ', direction, index);
-	}
+	const [rating, setRating] = useState(0);
+	const [hover, setHover] = useState(0);
 	
   	return (
 		<div className="rating-container" >
@@ -20,9 +17,9 @@ const Rating = () => {
 						<span 
 							className="star active" 
 							key={index} 
-							onClick={() => clicked(index)} 
-							onMouseEnter={() => hovered('Enter', index)}
-							onMouseLeave={() => hovered('Leave', index)}
+							onClick={() => setRating(star)}
+							onMouseEnter={() => setHover(star)}
+							onMouseLeave={() => setHover(0)}
 						>
 							{ '\u2605' }
 						</span>
